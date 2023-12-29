@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Rethink Sans', sans-serif;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+}
+
+.header>* {
+    padding: 0 10px;
+    /* padding: 10px; */
+}
+
+.nav-items{
+    margin-right: 60px;
+}
+
+.nav-items ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-items ul>li {
+    padding: 0 10px;
+
+}
+.nav-items ul>li:hover{
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+    /* border: 1px solid #ccc;
+height: 0px; */
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px;
+    margin: 10px;
+}
+
+.res-card{
+    width: 200px;
+    /* height: 360px; */
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    /* line-height: 1;  */
+
+
+
+}
+
+
+
+.res-card:hover{
+    border-color:#ccc;
+    cursor: pointer;
+}
+
+.res-card .res-logo {
+    width: 100%;
+    object-fit: cover;
+    height: 100px;
+    border-radius: 10px;
+}
