@@ -1,7 +1,7 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
-
+import {Link} from "react-router-dom";
 const Main = () => {
   const [listOfRes, setListOfRes] = useState([]);
 // another state variable
@@ -73,7 +73,7 @@ const Main = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            //updating the UI
+            //updating the UI   
             const filterList = listOfRes.filter(
               (res) => res.info.avgRating > 4.2
             );
@@ -86,7 +86,7 @@ const Main = () => {
 
       <div className="res-container">
         {listOfRes.map((res) => (
-          <ResCard resData={res} key={res.info.id} />
+          <Link key={res.info.id}><ResCard resData={res}  /></Link>
         ))}
       </div>
     </div>
