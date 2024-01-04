@@ -234,7 +234,10 @@ a {
 
 .user-card{
     border: 1px solid black;
-    width: 200px;
+    width: 150px;
     margin: 20px;
     padding: 20px;
+}
+.user-card img{
+    width: 100px;
 }
