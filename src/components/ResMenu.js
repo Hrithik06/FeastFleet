@@ -1,8 +1,8 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-
 import useResMenu from "../utils/useResMenu";
 import Category from "./Category";
+
 const ResMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
 

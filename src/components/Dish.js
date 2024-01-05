@@ -14,7 +14,7 @@ const Dish = (props) => {
       </div>
 
       {item?.card?.info && "imageId" in item.card.info ? (
-        <img src={DISH_IMG + imageId}></img>
+        <img src={DISH_IMG + imageId} alt="Dish"></img>
       ) : (
         <p>No Image</p>
       )}

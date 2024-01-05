@@ -1,32 +1,44 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import useHomeData from "../utils/useHomeData";
+import { HOME_API } from "../utils/constants";
+
 const Main = () => {
+  const [listOfRes, setListOfRes] = useState([]);
   // another state variable
   const [beforeList, setBeforeList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const onlineStatus = useOnlineStatus();
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  const listOfRes = useHomeData();
+  const fetchData = async () => {
+    const data = await fetch(HOME_API);
 
-  
+    const json = await data.json();
+    // Optional Chaining
+    const apiData =
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setListOfRes(apiData);
+  };
+
+
+
+
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
   // }
-  if(onlineStatus===false){
-    return <h1>Oops!! Couldn't reach the servers. You seem offline, check your internet connection</h1>
-  }
   // Ternary Operator
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="main">
       <div className="filter">
+        {/* <form action=""> */}
         <div className="search">
           <input
             type="text"
@@ -47,6 +59,7 @@ const Main = () => {
             onClick={() => {
               // copying listOfRes to beforeList
               setBeforeList(listOfRes);
+
               // filtering, this is modifying the main list
               const searchList = listOfRes.filter((res) => {
                 return res.info.name
@@ -58,10 +71,16 @@ const Main = () => {
             }}
           >
             {/* Search */}
-            <img width="30" height="30" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/>
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/search--v1.png"
+              alt="search--v1"
+            />
           </button>
         </div>
 
+        {/* </form> */}
         <button
           className="filter-btn"
           onClick={() => {
