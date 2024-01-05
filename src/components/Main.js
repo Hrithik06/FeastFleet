@@ -19,11 +19,13 @@ const Main = () => {
     const json = await data.json();
     // Optional Chaining
     const apiData =
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setListOfRes(apiData);
   };
 
+  console.log(listOfRes)
+  
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />

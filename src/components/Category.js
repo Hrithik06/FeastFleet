@@ -1,5 +1,4 @@
-import { DISH_IMG } from "../utils/constants";
-
+import Dish from "./Dish";
 const Category = (props) => {
   const { cardData } = props;
 
@@ -10,31 +9,10 @@ const Category = (props) => {
       <h3>
         {title} {count}
       </h3>
-
       <ul>
         {itemCards?.map((item) => (
           <li key={item?.card?.info?.id}>
-            {
-              <div className="dish">
-                <div className="textDetails">
-                  <h4>{item?.card?.info?.name}</h4>
-                  <h5>
-                    ₹{" "}
-                    {item?.card?.info?.price / 100 ||
-                      item?.card?.info?.defaultPrice / 100}
-                  </h5>
-                  <p>
-                 { item?.card?.info?.description}
-                  </p>
-                </div>
-
-                {item?.card?.info && "imageId" in item.card.info ? (
-                  <img src={DISH_IMG + item?.card?.info?.imageId}></img>
-                ) : (
-                  <p>No Image</p>
-                )}
-              </div>
-            }
+            <Dish item={item}></Dish>
             <div className="divider"></div>
           </li>
         ))}
