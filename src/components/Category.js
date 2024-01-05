@@ -1,11 +1,13 @@
 import Dish from "./Dish";
-const Category = (props) => {
-  const { cardData } = props;
+const Category = ({cardData}) => {
+  //destructuiring on the fly
+  
 
   const { title, itemCards } = cardData.card.card;
   const count = itemCards ? "(" + itemCards.length + ")" : "";
+
   return (
-    <div key={props?.card?.card?.title} className="category">
+    <div key={title} className="category">
       <h3>
         {title} {count}
       </h3>

@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/Hrithik06/FeastFleet#readme",
   "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
     "parcel": "^2.10.3",
     "process": "^0.11.10"
   },
