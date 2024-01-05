@@ -1,43 +1,32 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HOME_API } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useHomeData from "../utils/useHomeData";
 const Main = () => {
-  const [listOfRes, setListOfRes] = useState([]);
   // another state variable
   const [beforeList, setBeforeList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const onlineStatus = useOnlineStatus();
 
-  const fetchData = async () => {
-    const data = await fetch(HOME_API);
+  const listOfRes = useHomeData();
 
-    const json = await data.json();
-    // Optional Chaining
-    const apiData =
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setListOfRes(apiData);
-  };
-
-  console.log(listOfRes)
   
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
   // }
+  if(onlineStatus===false){
+    return <h1>Oops!! Couldn't reach the servers. You seem offline, check your internet connection</h1>
+  }
   // Ternary Operator
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="main">
       <div className="filter">
-
-        {/* <form action=""> */}
         <div className="search">
           <input
             type="text"
@@ -58,7 +47,6 @@ const Main = () => {
             onClick={() => {
               // copying listOfRes to beforeList
               setBeforeList(listOfRes);
-
               // filtering, this is modifying the main list
               const searchList = listOfRes.filter((res) => {
                 return res.info.name
@@ -74,7 +62,6 @@ const Main = () => {
           </button>
         </div>
 
-        {/* </form> */}
         <button
           className="filter-btn"
           onClick={() => {
