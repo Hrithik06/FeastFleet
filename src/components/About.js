@@ -35,7 +35,7 @@ class About extends Component {
 
     return (
       <div className="About">
-        <h1>About Us</h1>
+        <h1 className="text-5xl font-lg">About Us</h1>
         {/* <User name={"Hrithik"} location={"India"}/> */}
         <UserClass name={"First"} location={"India"} />
       </div>

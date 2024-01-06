@@ -1,34 +1,43 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import useHomeData from "../utils/useHomeData";
+import { HOME_API } from "../utils/constants";
+
 const Main = () => {
+  const [listOfRes, setListOfRes] = useState([]);
   // another state variable
   const [beforeList, setBeforeList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const onlineStatus = useOnlineStatus();
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  const listOfRes = useHomeData();
+  const fetchData = async () => {
+    const data = await fetch(HOME_API);
 
-  
+    const json = await data.json();
+    // Optional Chaining
+    const apiData =
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setListOfRes(apiData);
+  };
+
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
   // }
-  if(onlineStatus===false){
-    return <h1>Oops!! Couldn't reach the servers. You seem offline, check your internet connection</h1>
-  }
   // Ternary Operator
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="main">
-      <div className="filter">
-        <div className="search">
+    <div className="main ">
+      <div className="filter p-5 flex items-center justify-between">
+        <div className="search flex justify-around">
           <input
+          className="w-96 px-2 border-solid border-2 border-gray-300 rounded-lg"
             type="text"
             id="searchText"
             placeholder="Your next yummy meal just a search away.."
@@ -37,16 +46,18 @@ const Main = () => {
               setSearchText(e.target.value);
             }}
             onFocus={() => {
-              if (beforeList.length != 0) {
+              if (beforeList.length !== 0) {
                 setListOfRes(beforeList);
               }
             }}
           />
           <button
-            id="search-btn"
+            id="search-btn "
+            className="p-2"
             onClick={() => {
               // copying listOfRes to beforeList
               setBeforeList(listOfRes);
+
               // filtering, this is modifying the main list
               const searchList = listOfRes.filter((res) => {
                 return res.info.name
@@ -58,25 +69,32 @@ const Main = () => {
             }}
           >
             {/* Search */}
-            <img width="30" height="30" src="https://img.icons8.com/ios/50/search--v1.png" alt="search--v1"/>
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/ios/50/search--v1.png"
+              alt="search--v1"
+            />
           </button>
         </div>
 
-        <button
-          className="filter-btn"
-          onClick={() => {
-            //updating the UI
-            const filterList = listOfRes.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setListOfRes(filterList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="w-60 py-2 border-solid border-2 border-black-700 rounded-lg text-center  hover:font-medium">
+          <button
+            className="filter-btn"
+            onClick={() => {
+              //updating the UI
+              const filterList = listOfRes.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setListOfRes(filterList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
 
-      <div className="res-container">
+      <div className="res-container m-5 flex flex-wrap gap-10 justify-between">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             <ResCard resData={res} />
