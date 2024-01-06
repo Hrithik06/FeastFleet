@@ -1,6 +1,6 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HOME_API } from "../utils/constants";
 
@@ -25,9 +25,6 @@ const Main = () => {
     setListOfRes(apiData);
   };
 
-
-
-
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
@@ -36,11 +33,11 @@ const Main = () => {
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="main">
-      <div className="filter">
-        {/* <form action=""> */}
-        <div className="search">
+    <div className="main ">
+      <div className="filter p-5 flex items-center justify-between">
+        <div className="search flex justify-around">
           <input
+          className="w-96 px-2 border-solid border-2 border-gray-300 rounded-lg"
             type="text"
             id="searchText"
             placeholder="Your next yummy meal just a search away.."
@@ -49,13 +46,14 @@ const Main = () => {
               setSearchText(e.target.value);
             }}
             onFocus={() => {
-              if (beforeList.length != 0) {
+              if (beforeList.length !== 0) {
                 setListOfRes(beforeList);
               }
             }}
           />
           <button
-            id="search-btn"
+            id="search-btn "
+            className="p-2"
             onClick={() => {
               // copying listOfRes to beforeList
               setBeforeList(listOfRes);
@@ -80,22 +78,23 @@ const Main = () => {
           </button>
         </div>
 
-        {/* </form> */}
-        <button
-          className="filter-btn"
-          onClick={() => {
-            //updating the UI
-            const filterList = listOfRes.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setListOfRes(filterList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="w-60 py-2 border-solid border-2 border-black-700 rounded-lg text-center  hover:font-medium">
+          <button
+            className="filter-btn"
+            onClick={() => {
+              //updating the UI
+              const filterList = listOfRes.filter(
+                (res) => res.info.avgRating > 4.2
+              );
+              setListOfRes(filterList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
 
-      <div className="res-container">
+      <div className="res-container m-5 flex flex-wrap gap-10 justify-between">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             <ResCard resData={res} />

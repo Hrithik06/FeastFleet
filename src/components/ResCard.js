@@ -14,16 +14,16 @@ const ResCard = (props) => {
   // console.log(resData);
 
   return (
-    <div className="res-card">
+    <div className="res-card w-64 h- border-solid border-2 border-black-700 rounded-lg  text-base">
       <div className="img">
       <img
-        className="res-logo"
+        className="res-logo w-full h-44 rounded-lg "
         src={CDN_URL + cloudinaryImageId}
         alt="res-img"
       />
       </div>
-      <div className="textDetails">
-        <h3>{name}</h3>
+      <div className="textDetails p-2">
+        <h3 className="font-bold ">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h5>{avgRating} Stars</h5>
         <h5>{slaString}</h5>

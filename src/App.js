@@ -22,10 +22,11 @@ const AppLayout = () => {
 
 
   return (
-    <div className="app">
+    <div className="app font-poppins">
       <Header />
-      {/* Replaced by children */}
+      <div className="mx-32">
       <Outlet /> 
+      </div>
     </div>
   );
 };

@@ -28,8 +28,8 @@ const ResMenu = () => {
     .map((c) => <Category key={c?.card?.card?.title} cardData={c} />);
 
   return (
-    <div className="res-menu">
-      <h1>{resName}</h1>
+    <div className="res-menu flex flex-col items-center  m-4">
+      <h1 className="font-bold text-2xl m-4">{resName}</h1>
       {menuCategory}
     </div>
   );
