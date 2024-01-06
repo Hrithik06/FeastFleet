@@ -1,8 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 
-const ResCard = (props) => {
+const ResCard = ({ resData }) => {
   // console.log(props)
-  const { resData } = props;
   const {
     cloudinaryImageId,
     name,
@@ -25,7 +24,7 @@ const ResCard = (props) => {
       <div className="textDetails p-2">
         <h3 className="font-bold ">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
-        <h5>{avgRating} Stars</h5>
+        <h5>{avgRating}  ⭐</h5>
         <h5>{slaString}</h5>
         <p>{costForTwo}</p>
       </div>
