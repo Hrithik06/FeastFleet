@@ -24,7 +24,8 @@ const Main = () => {
         ?.restaurants;
     setListOfRes(apiData);
   };
-
+console.log(listOfRes)
+ 
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
@@ -94,7 +95,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="res-container m-5 flex flex-wrap gap-10 justify-between">
+      <div className="res-container m-5 flex flex-wrap gap-10 justify-around">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             <ResCard resData={res} />

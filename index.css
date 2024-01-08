@@ -2,6 +2,34 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+.res-card {
+    width: 250px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.res-card .textDetails{
+    padding: 5px;
+    line-height: 1;
+}
+
+
+.res-card:hover {
+    border-color: #ccc;
+    cursor: pointer;
+}
+
+.res-card .res-logo {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    border-radius: 10px;
+} */
