@@ -24,7 +24,7 @@ const AppLayout = () => {
   return (
     <div className="app font-poppins">
       <Header />
-      <div className="mx-32">
+      <div className="mx-24">
       <Outlet /> 
       </div>
     </div>
@@ -64,7 +64,7 @@ const appRouter = createBrowserRouter([
         path:"/restaurant/:resId",
         element:<ResMenu/>,
         
-      }
+      },
     ],
     errorElement: <Error />,
   },
