@@ -33,15 +33,7 @@ const Dish = (props) => {
 
   return (
     <div className="dish w-[800px] h-32 m-4 flex justify-between items-center gap-28">
-    
-      <div className="textDetails">
-        <div className="py-2">{vegClassifier === "VEG" ? veg : nonveg}</div>
-        <h4 className="font-medium py-2">{name}</h4>
-        <h5 className="py-2">₹ {price / 100 || defaultPrice / 100}</h5>
-        <p className="text-xs text-gray-400" >{description}</p>
-      </div>
-
-      {item?.card?.info && "imageId" in item.card.info ? (
+     {item?.card?.info && "imageId" in item.card.info ? (
         <div>
           <img
             src={DISH_IMG + imageId}
@@ -54,6 +46,14 @@ const Dish = (props) => {
           No Image
         </div>
       )}
+      <div className="textDetails w-3/4">
+        <div className="py-2">{vegClassifier === "VEG" ? veg : nonveg}</div>
+        <h4 className="font-medium py-2">{name}</h4>
+        <h5 className="py-2">₹ {price / 100 || defaultPrice / 100}</h5>
+        <p className="text-xs text-gray-400" >{description}</p>
+      </div>
+
+     
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard, { withOfferResCard } from "./ResCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -14,6 +14,8 @@ const Main = () => {
     fetchData();
   }, []);
 
+  console.log(listOfRes);
+
   const fetchData = async () => {
     const data = await fetch(HOME_API);
 
@@ -24,8 +26,10 @@ const Main = () => {
         ?.restaurants;
     setListOfRes(apiData);
   };
-console.log(listOfRes)
- 
+  // console.log(listOfRes)
+
+  const OfferedResCard = withOfferResCard(ResCard);
+
   // Conditional Rendering
   // if(listOfRes.length === 0){
   //   return <Shimmer />
@@ -38,7 +42,7 @@ console.log(listOfRes)
       <div className="filter p-5 flex items-center justify-between">
         <div className="search flex justify-around">
           <input
-          className="w-96 px-2 border-solid border-2 border-gray-300 rounded-lg"
+            className="w-96 px-2 border-solid border-2 border-gray-300 rounded-lg"
             type="text"
             id="searchText"
             placeholder="Your next yummy meal just a search away.."
@@ -98,7 +102,19 @@ console.log(listOfRes)
       <div className="res-container m-5 flex flex-wrap gap-10 justify-around">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
-            <ResCard resData={res} />
+            {
+
+              // res.info.aggregatedDiscountInfoV3 &&
+              (res.info.aggregatedDiscountInfoV3.discountTag===undefined) ? (
+                
+                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
+                
+                <OfferedResCard resData={res} />
+                ) : (
+                <ResCard resData={res} />
+                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
+              )
+            }
           </Link>
         ))}
       </div>
