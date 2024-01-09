@@ -42,7 +42,7 @@ const Main = () => {
       <div className="filter p-5 flex items-center justify-between">
         <div className="search flex justify-around">
           <input
-            className="w-96 px-2 border-solid border-2 border-gray-300 rounded-lg"
+            className="w-96 px-2 border-solid border-2 border-gray-300 rounded-full shadow-lg"
             type="text"
             id="searchText"
             placeholder="Your next yummy meal just a search away.."
@@ -83,7 +83,7 @@ const Main = () => {
           </button>
         </div>
 
-        <div className="w-60 py-2 border-solid border-2 border-black-700 rounded-lg text-center  hover:font-medium">
+        <div className="w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100">
           <button
             className="filter-btn"
             onClick={() => {
