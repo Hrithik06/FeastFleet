@@ -1,4 +1,4 @@
-import { DISH_IMG } from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 
 const Dish = (props) => {
   const veg = (
@@ -36,7 +36,7 @@ const Dish = (props) => {
      {item?.card?.info && "imageId" in item.card.info ? (
         <div>
           <img
-            src={DISH_IMG + imageId}
+            src={CDN_URL + imageId}
             alt="Dish"
             className="w-40 h-32 rounded-lg"
           ></img>
