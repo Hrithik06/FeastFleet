@@ -1,7 +1,6 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useResMenu from "../utils/useResMenu";
-import Category from "./Category";
 import ResCategory from "./ResCategory";
 
 
@@ -38,17 +37,12 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   
 )
-  // console.log(categories)
 
 
-  //all menuCategory
-  const menuCategory = cards
-    .slice(1, -2)
-    .map((c) => <Category key={c?.card?.card?.title} cardData={c} />);
 
   return (
     <div>
-      <div className="resDetails flex gap-24 my-2 mx-auto justify-center ">
+      <div className="resDetails flex gap-24 mt-10 mx-auto justify-center ">
         <div>
           <h1 className="font-bold text-3xl">{name}</h1>
           <p>{areaName}</p>
@@ -60,7 +54,6 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
         </div>
       </div>
 
-      {/* <div>{menuCategory}</div> */}
       {categories.map(c => <ResCategory data={c} key={c.card.card.title}/>)}
     </div>
   );

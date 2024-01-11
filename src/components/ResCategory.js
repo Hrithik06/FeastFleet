@@ -1,29 +1,24 @@
 import ARROW_DOWN from "../../icons/icons8-arrow-down-30.png";
 import { useState } from "react";
-// import { useState } from "react";
 import ItemList from "./ItemList";
 const ResCategory = ({data})=>{
-// console.log(data)
 const {title, itemCards} = data?.card?.card;
 
 const [showItems, setShowItems] = useState(false)
-
+const [arrowDirection, setArrowDirection] = useState(ARROW_DOWN)
 
 
 const handleClick = ()=>{
 console.log("clicked")
-
-    setShowItems(!(showItems));
 }
 
-// console.log(showItems)
 
 
 
 
 
 
-    return <div className="w-6/12 my-2 py-1 shadow-xl mx-auto px-2 rounded-lg bg-slate-50">
+    return <div className="w-8/12 my-2 py-1 shadow-xl mx-auto px-2 rounded-lg bg-slate-50">
         
         <div className="flex justify-between items-center cursor-pointer " onClick={handleClick}>
         <span className="font-bold text-2xl p-2">{title} ({itemCards.length})</span>
