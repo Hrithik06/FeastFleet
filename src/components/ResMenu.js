@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useResMenu from "../utils/useResMenu";
-import Category from "./Category";
+import ResCategory from "./ResCategory";
 
 
 const ResMenu = () => {
@@ -13,7 +13,7 @@ const ResMenu = () => {
   //using custom Hook which gives data using resId
   const resInfo = useResMenu(resId);
 
-  console.log(resInfo);
+  // console.log(resInfo);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -27,15 +27,22 @@ const ResMenu = () => {
 
   //As per the API 2nd element of array contains the category and dishes
   const cards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  
 
-  //all menuCategory
-  const menuCategory = cards
-    .slice(1, -2)
-    .map((c) => <Category key={c?.card?.card?.title} cardData={c} />);
+
+  // Getting Categories like Recommended from the array. This string signifes category "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  (c)=>
+    c?.card?.card?.["@type"]===
+    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  
+)
+
+
 
   return (
-    <div className="res-menu flex flex-col items-center  m-4">
-      <div className="resDetails flex gap-24 my-16 p-4 ">
+    <div>
+      <div className="resDetails flex gap-24 mt-10 mx-auto justify-center ">
         <div>
           <h1 className="font-bold text-3xl">{name}</h1>
           <p>{areaName}</p>
@@ -47,7 +54,7 @@ const ResMenu = () => {
         </div>
       </div>
 
-      <div>{menuCategory}</div>
+      {categories.map(c => <ResCategory data={c} key={c.card.card.title}/>)}
     </div>
   );
 };

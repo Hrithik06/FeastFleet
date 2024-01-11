@@ -14,7 +14,7 @@ const Main = () => {
     fetchData();
   }, []);
 
-  console.log(listOfRes);
+  // console.log(listOfRes);
 
   const fetchData = async () => {
     const data = await fetch(HOME_API);
@@ -22,7 +22,7 @@ const Main = () => {
     const json = await data.json();
     // Optional Chaining
     const apiData =
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setListOfRes(apiData);
   };
@@ -45,7 +45,7 @@ const Main = () => {
             className="w-96 px-2 border-solid border-2 border-gray-300 rounded-full shadow-lg"
             type="text"
             id="searchText"
-            placeholder="Your next yummy meal just a search away.."
+            placeholder="Search for Restaurants..."
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);

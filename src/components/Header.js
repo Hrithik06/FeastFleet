@@ -11,7 +11,7 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
     return (
-      <div className="header px-20 py-2 flex justify-between items-center shadow-lg text-lg font-poppins">
+      <div className="header px-20 py-2 flex justify-between items-center shadow-lg text-lg font-poppins  bg-white">
         <div className="logo-container">
           <a href="/"> 
           {/* <img src={LOGO_URL} alt="logo" className="w-15"/> */}
