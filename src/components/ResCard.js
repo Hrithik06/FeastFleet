@@ -1,7 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 
 const ResCard = ({ resData }) => {
-  // console.log(props)
+  // console.log(CDN_URL)
   const {
     cloudinaryImageId,
     name,

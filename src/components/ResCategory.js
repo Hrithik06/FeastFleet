@@ -5,11 +5,10 @@ const ResCategory = ({data})=>{
 const {title, itemCards} = data?.card?.card;
 
 const [showItems, setShowItems] = useState(false)
-const [arrowDirection, setArrowDirection] = useState(ARROW_DOWN)
 
 
 const handleClick = ()=>{
-console.log("clicked")
+setShowItems(!(showItems))
 }
 
 
