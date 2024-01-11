@@ -1,7 +1,11 @@
 import VEG from "../../icons/icons8-veg-32.png";
 import NON_VEG from "../../icons/icons8-non-veg-32.png";
+import { CDN_URL } from "../utils/constants.js";
 const ItemList = ({ items }) => {
-  console.log(items);
+  // console.log(items);
+// console.log(CDN_URL.toString());
+console.log(CDN_URL);
+
 
   return (
     <div>
@@ -20,7 +24,7 @@ const ItemList = ({ items }) => {
               <img
                 className="w-36 h-28 rounded-lg"
                 src={
-                  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+                  CDN_URL +
                   item.card.info.imageId
                 }
                 alt=""
