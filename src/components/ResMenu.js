@@ -1,4 +1,4 @@
-import Shimmer from "./Shimmer";
+import ShimmerMenu from "./ShimmerMenu";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import useResMenu from "../utils/useResMenu";
@@ -19,7 +19,7 @@ const ResMenu = () => {
 
 
   if (resInfo === null) {
-    return <Shimmer />;
+    return <ShimmerMenu />;
   }
 
   //As per the API 0th element of array contains the restaurant name
