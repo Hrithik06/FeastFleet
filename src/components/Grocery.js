@@ -1,5 +1,22 @@
 const Grocery = ()=>{
-    return <h1>Very Big Component</h1>
+    return (
+
+
+<div>
+
+
+
+        
+        
+        <div className="bg-grocery bg-center h-screen bg-cover w-full " >
+         
+
+            </div>
+    </div>
+
+
+
+        )
 }
 
 export default Grocery;

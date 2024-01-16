@@ -29,7 +29,8 @@ const ResCard = ({ resData }) => {
         <h3 className="font-bold ">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h5 className="font-medium">
-          {avgRating} ⭐•{slaString}
+          {avgRating} ⭐
+         <span className="flex gap-2">{<img className="w-5" src={CDN_URL+"v1648635511/Delivery_fee_new_cjxumu"}/>}{slaString}</span> 
         </h5>
         <p>{costForTwo}</p>
       </div>
