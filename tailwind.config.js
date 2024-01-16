@@ -8,7 +8,10 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         
-      }
+      },
+      backgroundImage: {
+        'grocery': "url('icons/grocery_building.png')",
+      },
     },
   },
   plugins: [],

@@ -14,7 +14,7 @@ const ResMenu = () => {
   //using custom Hook which gives data using resId
   const resInfo = useResMenu(resId);
 
-  const [showIndex, setShowIndex] = useState(null)
+  const [showIndex, setShowIndex] = useState(0)
 
 
 
@@ -40,7 +40,7 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
 
 
   return (
-    <div>
+    <div className="mx-24">
       <div className="resDetails flex gap-24 mt-10 mx-auto justify-center ">
         <div>
           <h1 className="font-bold text-3xl">{name}</h1>
@@ -57,8 +57,9 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
       {categories.map(
         (c,index )=> 
       <ResCategory data={c} 
-      showItems={index===showIndex?true:false} 
-      setShowIndex={()=>setShowIndex(index)}
+      showItems={index===showIndex ? true:false} 
+      indexCbFun={()=>setShowIndex(index)}
+      index={index}
       key={c.card.card.title}/>
       )}
     </div>

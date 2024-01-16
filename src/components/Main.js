@@ -38,7 +38,7 @@ const Main = () => {
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="main ">
+    <div className="main mx-24">
       <div className="filter p-5 mx-16 flex items-center justify-between">
         <div className="search flex justify-around">
           <input

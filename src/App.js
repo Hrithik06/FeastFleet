@@ -9,7 +9,6 @@ import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
 import Shimmer from "./components/Shimmer";
 
-import Practices from "./components/Accordion"
 import Accordion from "./components/Accordion";
 
 
@@ -25,7 +24,7 @@ const AppLayout = () => {
   return (
     <div className="app font-poppins">
       <Header />
-      <div className="mx-24">
+      <div className="">
       <Outlet /> 
       </div>
     </div>
