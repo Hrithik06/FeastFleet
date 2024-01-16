@@ -98,7 +98,21 @@ console.log(listOfRes)
       <div className="res-container m-5 flex flex-wrap gap-10 justify-around">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
+
             <ResCard resData={res} />
+            {
+              // res.info.aggregatedDiscountInfoV3 &&
+              (res.info.aggregatedDiscountInfoV3.discountTag===undefined) ? (
+                
+                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
+                
+                <OfferedResCard resData={res} />
+                ) : (
+                <ResCard resData={res} />
+                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
+              )
+            }
+
           </Link>
         ))}
       </div>
