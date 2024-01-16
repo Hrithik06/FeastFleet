@@ -9,7 +9,8 @@ import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
 import Shimmer from "./components/Shimmer";
 
-
+import Practices from "./components/Accordion"
+import Accordion from "./components/Accordion";
 
 
 
@@ -65,7 +66,13 @@ const appRouter = createBrowserRouter([
         element:<ResMenu/>,
         
       },
+      {
+        path: "/accordion",
+        element: <Accordion />,
+        
+      },
     ],
+    
     errorElement: <Error />,
   },
 ]);

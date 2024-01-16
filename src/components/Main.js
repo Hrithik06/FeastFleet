@@ -39,7 +39,7 @@ const Main = () => {
     <Shimmer />
   ) : (
     <div className="main ">
-      <div className="filter p-5 flex items-center justify-between">
+      <div className="filter p-5 mx-16 flex items-center justify-between">
         <div className="search flex justify-around">
           <input
             className="w-96 px-2 border-solid border-2 border-gray-300 rounded-full shadow-lg"
@@ -57,7 +57,7 @@ const Main = () => {
             }}
           />
           <button
-            id="search-btn "
+            id="search-btn"
             className="p-2"
             onClick={() => {
               // copying listOfRes to beforeList
@@ -99,7 +99,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="res-container m-5 flex flex-wrap gap-10 justify-around">
+      <div className="res-container mx-16 m-5 flex flex-wrap gap-0 justify-around ">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             {

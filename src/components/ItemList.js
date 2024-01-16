@@ -3,9 +3,6 @@ import NON_VEG from "../../icons/icons8-non-veg-32.png";
 import { CDN_URL } from "../utils/constants.js";
 const ItemList = ({ items }) => {
   // console.log(items);
-// console.log(CDN_URL.toString());
-console.log(CDN_URL);
-
 
   return (
     <div>
@@ -30,7 +27,7 @@ console.log(CDN_URL);
                 alt=""
               />
             ) : (
-              <p className="text-center">No Image</p>
+              <p className="text-center w-36 h-28">No Image</p>
             )}
           </div>
           <div className="w-3/4">
@@ -44,8 +41,8 @@ console.log(CDN_URL);
             <p>
               ₹
               {(item.card.info.price
-                ? item.card.info.price/100
-                : item.card.info.defaultPrice) / 100}
+                ? item.card.info.price
+                : item.card.info.defaultPrice)/100 }
             </p>
             <p className="text-xs text-gray-500">
               {item.card.info.description}
