@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
@@ -17,12 +17,12 @@ const Grocery = lazy(()=>
   import("./components/Grocery")
 )
 
-// const About = lazy(() => import("./components/About"))
+const About = lazy(() => import("./components/About"))
 const AppLayout = () => {
 
 
   return (
-    <div className="app font-poppins">
+    <div className="font-poppins ">
       <Header />
       <div className="">
       <Outlet /> 
@@ -43,7 +43,9 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element:   (<Suspense fallback={<Shimmer/>} >
+        <About />
+      </Suspense>),
         
       },
       {
