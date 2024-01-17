@@ -1,8 +1,14 @@
-import {useState } from "react";
+import {useState,useContext } from "react";
 import LOGO_URL from "../../icons/FEAST_FLEET.svg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
 const Header = () => {
+
+  const {loggedInUser} = useContext(UserContext)
+
+
+
 
 
 
@@ -38,6 +44,8 @@ const Header = () => {
             onClick={()=>{
               btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
             }}>{btnName}</button>
+
+            <li className="m-1 p-1 font-bold">{loggedInUser}</li>
 
           </ul>
         </div>
