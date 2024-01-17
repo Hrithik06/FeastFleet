@@ -1,8 +1,9 @@
 import ShimmerMenu from "./ShimmerMenu";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useResMenu from "../utils/useResMenu";
 import ResCategory from "./ResCategory";
+import UserContext from "./UserContext";
 
 
 const ResMenu = () => {
@@ -16,7 +17,7 @@ const ResMenu = () => {
 
   const [showIndex, setShowIndex] = useState(0)
 
-
+// const {loggedInUser} = useContext(UserContext)
 
   if (resInfo === null) {
     return <ShimmerMenu />;
@@ -50,7 +51,7 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
           <p>{cuisines.join(", ")}</p>
           <p>{avgRating}  ⭐</p>
           <p>{costForTwoMessage}</p>
-          
+          {/* <p>{loggedInUser}</p> */}
         </div>
       </div>
 

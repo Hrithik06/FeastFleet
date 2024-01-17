@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from "react";
+import React, {Suspense, lazy, useEffect,useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -10,6 +10,7 @@ import ResMenu from "./components/ResMenu";
 import Shimmer from "./components/Shimmer";
 
 import Accordion from "./components/Accordion";
+import UserContext from "./components/UserContext";
 
 
 
@@ -20,14 +21,34 @@ const Grocery = lazy(()=>
 const About = lazy(() => import("./components/About"))
 const AppLayout = () => {
 
+  const [userName, setUserName] = useState()
+  //auhthentication
+
+  useEffect(()=>{
+    //API call and send Username and Password get result data
+
+    const data ={
+      name:"Hrithik"
+    }
+    setUserName(data.name);
+  },[])
+console.log(userName)
 
   return (
+
+    <UserContext.Provider value={{loggedInUser:userName, setUserName }}>
+      {/* //Hrithik */}
     <div className="font-poppins ">
+    {/* <UserContext.Provider value={{loggedInUser:"Not Hrithik" }}> */}
+      {/* //Not Hrithik only in Header */}
       <Header />
+    {/* </UserContext.Provider> */}
+
       <div className="">
       <Outlet /> 
       </div>
     </div>
+    </UserContext.Provider>
   );
 };
 
