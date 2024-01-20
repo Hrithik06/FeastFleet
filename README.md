@@ -22,3 +22,10 @@
 
 
    
+## Tech Used
+- ReactJS
+- React-Router
+- Tailwind
+- React-Redux/ReduxToolkit
+- Jest
+- Browserslist
