@@ -37,7 +37,7 @@ const ResCard = ({ resData }) => {
          <span className="flex gap-2">{<img className="w-5" src={CDN_URL+"v1648635511/Delivery_fee_new_cjxumu"}/>}{slaString}</span> 
         </h5>
         <p>{costForTwo}</p>
-        <p>{loggedInUser}</p>
+        {/* <p>{loggedInUser}</p> */}
 
       </div>
     </div>

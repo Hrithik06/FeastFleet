@@ -28,8 +28,8 @@ const{loggedInUser,setUserName} = useContext(UserContext)
     setListOfRes(apiData);
   };
 
-
   const OfferedResCard = withOfferResCard(ResCard);
+
 
   // Conditional Rendering
   // if(listOfRes.length === 0){
@@ -83,7 +83,7 @@ const{loggedInUser,setUserName} = useContext(UserContext)
             />
           </button>
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="userName">UserName: </label>
           <input
             id="userName"
@@ -92,10 +92,10 @@ const{loggedInUser,setUserName} = useContext(UserContext)
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />
-        </div>
-        <div className="w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100">
+        </div> */}
+
           <button
-            className="filter-btn"
+            className="filter-btn w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100"
             onClick={() => {
               //updating the UI
               const filterList = listOfRes.filter(
@@ -106,10 +106,9 @@ const{loggedInUser,setUserName} = useContext(UserContext)
           >
             Top Rated Restaurants
           </button>
-        </div>
       </div>
 
-      <div className="res-container mx-16 m-5 flex flex-wrap gap-0 justify-around ">
+      <div className="res-container gap-10 mx-16 m-5 flex flex-wrap justify-start ">
         {listOfRes.map((res) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             {

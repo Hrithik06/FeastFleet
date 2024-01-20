@@ -3,11 +3,14 @@ import LOGO_URL from "../../icons/FEAST_FLEET.svg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
 
   const {loggedInUser} = useContext(UserContext)
 
 
+  //Subscribing to the store using a Selector, subscribing only to cart not theme, not user, only cart and that to not entire cart only items in cart
+const cartItems = useSelector((store)=>store.cart.items) ;
 
 
 
@@ -28,18 +31,18 @@ const Header = () => {
           // src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
           
           
-          alt="pizza-delivery"/>
+          alt="logo"/>
           </a>
         </div>
         <div className="nav-items">
-          <ul className="flex items-center">
+          <ul className="flex items-center gap-2">
             <li className="m-1 p-1">{onlineStatus?'✅ Online' : '❌ Disconnected'}</li>
             <li className="m-1 p-1"><Link to="/"> Home </Link> </li>
             <li className="m-1 p-1"><Link to = "/about">About Us</Link></li>
             <li className="m-1 p-1"><Link to = "/contact">Contact Us</Link></li>
             <li className="m-1 p-1"><Link to = "/grocery">Grocery</Link></li>
 
-            <li className="m-1 p-1">Cart </li>
+            <li className="m-1 p-1"><Link to = "/cart">Cart({cartItems.length})</Link> </li>
             <button className="login-btn" 
             onClick={()=>{
               btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
