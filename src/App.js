@@ -11,6 +11,7 @@ import Shimmer from "./components/Shimmer";
 
 import Accordion from "./components/Accordion";
 import UserContext from "./components/UserContext";
+import Testing from "./components/Testing";
 
 
 
@@ -91,6 +92,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/accordion",
         element: <Accordion />,
+        
+      }, 
+      {
+        path: "/test",
+        element: <Testing />,
         
       },
     ],
