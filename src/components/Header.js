@@ -42,13 +42,14 @@ const cartItems = useSelector((store)=>store.cart.items) ;
             <li className="m-1 p-1"><Link to = "/contact">Contact Us</Link></li>
             <li className="m-1 p-1"><Link to = "/grocery">Grocery</Link></li>
 
-            <li className="m-1 p-1"><Link to = "/cart">Cart({cartItems.length})</Link> </li>
+            <li className="m-1 p-1 font-bold"><Link to = "/cart">Cart ({cartItems.length})
+            </Link> </li>
             <button className="login-btn" 
             onClick={()=>{
               btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
             }}>{btnName}</button>
 
-            <li className="m-1 p-1 font-bold">{loggedInUser}</li>
+            <li className="m-1 p-1 font-semibold">{loggedInUser}</li>
 
           </ul>
         </div>
