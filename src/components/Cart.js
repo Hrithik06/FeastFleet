@@ -74,7 +74,7 @@ const totalPrice = (itemTotal/100+gst+40+3)
                 <p>3</p>
             </div>
             <div className="flex justify-between border-b-2 p-2">
-                <p>GST</p>
+                <p>GST(12%)</p>
                 <p>{gst}</p>
             </div>
             <div className="flex justify-between border-b-2 p-2">
