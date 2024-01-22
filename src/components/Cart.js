@@ -2,13 +2,41 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
 import CartItemList from "./CartItemList";
+import { useEffect, useState, useRef } from "react";
+import * as Toast from "@radix-ui/react-toast";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
+  const styles = {
+
+  
+    rootStyle :
+     "  p-[15px] grid [grid-template-areas:_'title_action'_'description_action'] grid-cols-[auto_max-content] gap-x-[15px] items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut fixed top-[90px] right-0 z-50 rounded-lg m-2 bg-slate-50 shadow-sm ",
+ 
+      closeButtonStyle : "rounded-lg font-medium text-xs px-[10px] leading-[25px] h-[25px] bg-green2 text-green11 shadow-[inset_0_0_0_1px] shadow-green7 hover:shadow-[inset_0_0_0_1px] hover:shadow-green8 focus:shadow-[0_0_0_2px] focus:shadow-green8",
+ 
+      viewPortStyle : "[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none",
+ 
+   }
+     //RadixUI
+     const [open, setOpen] = useState(false);
+     const timerRef = useRef(0);
+     const [toastTitle, setToastTitle] = useState("Default Title");
+     useEffect(() => {
+       return () => clearTimeout(timerRef.current);
+     }, []);
   
   const dispatch = useDispatch();
   const handleClearCart = () => {
     dispatch(clearCart());
+
+       //RadixUI
+   setOpen(false);
+   (cartItems.length!==0)?setToastTitle("Cart Cleared"):setToastTitle("Nothing to clear");
+   window.clearTimeout(timerRef.current);
+   timerRef.current = window.setTimeout(() => {
+     setOpen(true);
+   }, 100);
   };
   const itemTotal = cartItems.reduce((acc, curr) => {
     return (
@@ -26,6 +54,8 @@ const totalPrice = (itemTotal/100+gst+40+3)
 
 
   return (
+    <Toast.Provider swipeDirection="right" duration={1000}>
+
     <div className="my-4 mx-24 px-48">
       <div className="my-8 flex justify-between">
         <h2 className="text-3xl font-semibold ">
@@ -84,8 +114,19 @@ const totalPrice = (itemTotal/100+gst+40+3)
             </div>
           </div>
         </div>
+        
       )}
     </div>
+    <Toast.Root className={styles.rootStyle} open={open} onOpenChange={setOpen} type="background">
+            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
+              {toastTitle}
+            </Toast.Title>
+
+            <Toast.Close className={styles.closeButtonStyle}>OK</Toast.Close>
+            
+          </Toast.Root>
+          <Toast.Viewport className={styles.viewPortStyle} />
+        </Toast.Provider>
   );
 };
 
