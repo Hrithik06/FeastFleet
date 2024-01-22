@@ -3,17 +3,48 @@ import NON_VEG from "../../icons/icons8-non-veg-32.png";
 import { CDN_URL } from "../utils/constants.js";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../redux/cartSlice.js";
+import { useEffect, useState, useRef } from "react";
+import * as Toast from "@radix-ui/react-toast";
 const CartItemList = ({ items }) => {
+  const styles = {
+
+  
+    rootStyle :
+     "  p-[15px] grid [grid-template-areas:_'title_action'_'description_action'] grid-cols-[auto_max-content] gap-x-[15px] items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut fixed top-[90px] right-0 z-50 rounded-lg m-2 bg-slate-50 shadow-sm ",
+ 
+      closeButtonStyle : "rounded-lg font-medium text-xs px-[10px] leading-[25px] h-[25px] bg-green2 text-green11 shadow-[inset_0_0_0_1px] shadow-green7 hover:shadow-[inset_0_0_0_1px] hover:shadow-green8 focus:shadow-[0_0_0_2px] focus:shadow-green8",
+ 
+      viewPortStyle : "[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none",
+ 
+   }
+
+   //RadixUI
+   const [open, setOpen] = useState(false);
+   const timerRef = useRef(0);
+   const [toastTitle, setToastTitle] = useState("Default Title");
+   useEffect(() => {
+     return () => clearTimeout(timerRef.current);
+   }, []);
+
 
   const dispatch = useDispatch()
 
   const handleRemoveItem = (item)=>{
-   dispatch( removeItem(item))
-
+   dispatch(removeItem(item))
+   //RadixUI
+   setOpen(false);
+   setToastTitle(item.card.info.name + "Removed");
+   window.clearTimeout(timerRef.current);
+   timerRef.current = window.setTimeout(() => {
+     setOpen(true);
+   }, 100);
   }
   return (
     <div>
       {items.map((item) => (
+        
+        <Toast.Provider swipeDirection="right" duration={1000}>
+
         <div
           className="border-b-2 border-gray-200 my-4 pb-5 flex"
           key={item.card.info.id}
@@ -54,6 +85,16 @@ const CartItemList = ({ items }) => {
 
           </div>
         </div>
+        <Toast.Root className={styles.rootStyle} open={open} onOpenChange={setOpen} type="background">
+            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
+              {toastTitle}
+            </Toast.Title>
+
+            <Toast.Close className={styles.closeButtonStyle}>OK</Toast.Close>
+            
+          </Toast.Root>
+          <Toast.Viewport className={styles.viewPortStyle} />
+        </Toast.Provider>
       ))}
     </div>
   );
