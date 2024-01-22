@@ -23,9 +23,20 @@
 
    
 ## Tech Used
+- Parcel (changes to be made while using jest)
 - ReactJS
 - React-Router
 - Tailwind
+- RadixUI
 - React-Redux/ReduxToolkit
-- Jest
+- React Testing Library
+- Jest (also Babel dependecies refer Parcel)
 - Browserslist
+- JSDOM(check React Testing Lib Setup)
+
+
+#### Read more abt
+- parcel features
+- jsdom
+- immerjs used in redux and RTK
+- dunder why its used, reserved characters
