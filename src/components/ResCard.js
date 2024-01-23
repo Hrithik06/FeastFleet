@@ -18,12 +18,13 @@ const ResCard = ({ resData }) => {
 
   return (
     <div
-      className="res-card w-64 
-   hover:shadow-lg rounded-lg"
+      className="res-card w-64 transition ease-in-out duration-200 delay-75
+   hover:shadow-lg rounded-lg
+   "
     >
       {/* <div className="img"> */}
       <img
-        className="res-logo rounded-lg h-44 w-full"
+        className="res-logo rounded-lg h-44 w-full "
         src={CDN_URL + cloudinaryImageId}
         alt="res-img"
         // style={"height: 100%; width: 100%;"}

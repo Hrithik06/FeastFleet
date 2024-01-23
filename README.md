@@ -40,3 +40,4 @@
 - jsdom
 - immerjs used in redux and RTK
 - dunder why its used, reserved characters
+- why axios why cant we use fetch only, axios provides some more features for prod.

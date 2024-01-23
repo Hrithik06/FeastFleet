@@ -9,3 +9,4 @@ TODO Shimmer for Menu Page
 TODO Create a popup at the right side when item is added in the cart, example: Paneer 65 Added to cart
 TODO Create a popup at the right side when item is removed from the cart, example: Paneer 65 Removed from cart
  <!-- Check Prajwal's ecommerce or taiwlind designs-->
+ TODO Refer [food](https://tasty-bites-food.netlify.app/) before prod
