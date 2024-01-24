@@ -10,3 +10,4 @@ TODO Create a popup at the right side when item is added in the cart, example: P
 TODO Create a popup at the right side when item is removed from the cart, example: Paneer 65 Removed from cart
  <!-- Check Prajwal's ecommerce or taiwlind designs-->
  TODO Refer [food](https://tasty-bites-food.netlify.app/) before prod
+TODO for same transition [YT](https://www.youtube.com/watch?v=0zA6GZa2ZKc)

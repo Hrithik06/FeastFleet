@@ -52,7 +52,7 @@ const CartItemList = ({ items }) => {
           <div className=" px-6">
             <div className="absolute">
               <button
-                className=" bg-white text-red-500 px-5 py-1 border-gray-300 border-2 rounded-md ml-5 mt-20 hover:bg-green-200"
+                className=" bg-white text-red-500 px-3 py-1 border-gray-300 border-2 rounded-md mx-3 mt-20 hover:bg-green-200"
                 onClick={()=>handleRemoveItem(item)}
               >
                 Remove
@@ -86,7 +86,7 @@ const CartItemList = ({ items }) => {
           </div>
         </div>
         <Toast.Root className={styles.rootStyle} open={open} onOpenChange={setOpen} type="background">
-            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
+            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px] truncate w-52">
               {toastTitle}
             </Toast.Title>
 

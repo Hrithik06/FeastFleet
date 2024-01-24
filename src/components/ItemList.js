@@ -90,7 +90,7 @@ const ItemList = ({ items }) => {
           </div>
 
           <Toast.Root className={styles.rootStyle} open={open} onOpenChange={setOpen} type="background">
-            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
+            <Toast.Title className="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px] truncate w-52">
               {toastTitle}
             </Toast.Title>
 
