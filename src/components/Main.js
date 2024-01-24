@@ -10,12 +10,12 @@ const Main = () => {
   // another state variable
   const [beforeList, setBeforeList] = useState([]);
   const [searchText, setSearchText] = useState("");
-const{loggedInUser,setUserName} = useContext(UserContext)
+  const { loggedInUser, setUserName } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
 
-
+  console.log(listOfRes);
 
   const fetchData = async () => {
     const data = await fetch(HOME_API);
@@ -29,7 +29,6 @@ const{loggedInUser,setUserName} = useContext(UserContext)
   };
 
   const OfferedResCard = withOfferResCard(ResCard);
-
 
   // Conditional Rendering
   // if(listOfRes.length === 0){
@@ -94,32 +93,33 @@ const{loggedInUser,setUserName} = useContext(UserContext)
           />
         </div> */}
 
-          <button
-            className="filter-btn w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100"
-            onClick={() => {
-              //updating the UI
-              const filterList = listOfRes.filter(
-                (res) => res.info.avgRating > 4.2
-              );
-              setListOfRes(filterList);
-            }}
-          >
-            Top Rated Restaurants
-          </button>
+        <button
+          className="filter-btn w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100"
+          onClick={() => {
+            //updating the UI
+            const filterList = listOfRes.filter(
+              (res) => res.info.avgRating > 4.2
+            );
+            setListOfRes(filterList);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
       </div>
 
       <div className="res-container gap-10 mx-16 m-5 flex flex-wrap justify-start ">
-        {listOfRes.map((res) => (
+        {listOfRes.map((res, index) => (
           <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
             {
-              // res.info.aggregatedDiscountInfoV3 &&
-              res.info.aggregatedDiscountInfoV3.discountTag === undefined ? (
-                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
+              // If any of these objects are undefined, attempting to access properties deeper in the hierarchy will result in a TypeError. To prevent the error, you should ensure that all the nested properties are defined before trying to access discountTag.
 
+              res &&
+              res.info &&
+              res.info.aggregatedDiscountInfoV3 &&
+              res.info.aggregatedDiscountInfoV3.discountTag === undefined ? (
                 <OfferedResCard resData={res} />
               ) : (
                 <ResCard resData={res} />
-                // console.log(res.info.aggregatedDiscountInfoV3.discountTag)
               )
             }
           </Link>

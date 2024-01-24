@@ -31,8 +31,8 @@ const ResCard = ({ resData }) => {
       />
       {/* </div> */}
       <div className="textDetails m-2">
-        <h3 className="font-bold ">{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
+        <h3 className="font-bold truncate">{name}</h3>
+        <h4 className="truncate">{cuisines.join(", ")}</h4>
         <h5 className="font-medium">
           {avgRating} ⭐
          <span className="flex gap-2">{<img className="w-5" src={CDN_URL+"v1648635511/Delivery_fee_new_cjxumu"}/>}{slaString}</span> 
@@ -53,7 +53,7 @@ export const withOfferResCard = (ResCard) => {
   //component returning
 
   return (props) => {
-    const { header, subHeader } = props.resData.info.aggregatedDiscountInfoV3;
+    const { header, subHeader } = props?.resData?.info?.aggregatedDiscountInfoV3;
     // console.log(props.resData.info.aggregatedDiscountInfoV3);
 
     return (
