@@ -31,8 +31,7 @@ it("Should render Cart Item in Header", ()=>{
 })
 
 it("Should change Login Button to Logout Button OnClick",()=>{
-    render(
-        <BrowserRouter>
+    render(<BrowserRouter>
         <Provider store={appStore} >
         <Header />
         </Provider >

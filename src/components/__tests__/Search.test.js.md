@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Main from "../Main";
 import {fireEvent, getByRole, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import MOCK_DATA from "../mocks/resListMockData.json";
+import MOCK_DATA from "../mocks/mockResListData.json";
 
 // console.log(MOCK_DATA);
 

@@ -16,13 +16,6 @@ const config = {
 
 
 
-  moduleNameMapper: {
-    "\\.(svg|png)$": "identity-obj-proxy"
-  },
-  transform: {
-    "^.+\\.(jsx?|tsx?)$": "babel-jest",
-  },
-
 
 
   // Automatically clear mock calls, instances, contexts and results before every test

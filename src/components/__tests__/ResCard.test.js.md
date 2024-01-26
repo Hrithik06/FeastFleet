@@ -1,5 +1,5 @@
 import ResCard,{withOfferResCard} from "../ResCard";
-import MOCK_DATA from "../mocks/resCardMock.json";
+import MOCK_DATA from "../mocks/mockResCardData.json";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom"
 test("Should render ResCard component with props Data, checking name", ()=>{
