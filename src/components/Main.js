@@ -15,17 +15,21 @@ const Main = () => {
     fetchData();
   }, []);
 
-  // console.log(listOfRes);
-
   const fetchData = async () => {
-    const data = await fetch(HOME_API);
 
-    const json = await data.json();
-    // Optional Chaining
-    const apiData =
+      const data = await fetch(HOME_API);
+      // console.log(data);
+      // Check if the response status is OK
+
+      const json = await data.json();
+      // console.log(json)
+
+      // Optional Chaining
+      const apiData =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setListOfRes(apiData);
+          ?.restaurants;
+      setListOfRes(apiData);
+    
   };
 
   const OfferedResCard = withOfferResCard(ResCard);
@@ -44,7 +48,7 @@ const Main = () => {
           <input
             className="w-96 px-2 border-solid border-2 border-gray-300 rounded-full shadow-lg"
             type="text"
-            id="searchText"
+            data-testid="searchInput"
             placeholder="Search for Restaurants..."
             value={searchText}
             onChange={(e) => {
@@ -59,6 +63,7 @@ const Main = () => {
           <button
             id="search-btn"
             className="p-2"
+            data-testid = "searchBtn"
             onClick={() => {
               // copying listOfRes to beforeList
               setBeforeList(listOfRes);
@@ -102,14 +107,17 @@ const Main = () => {
             );
             setListOfRes(filterList);
           }}
-        >
-          Top Rated Restaurants
-        </button>
+        >Top Rated Restaurants</button>
       </div>
 
       <div className="res-container gap-10 mx-16 m-5 flex flex-wrap justify-start">
         {listOfRes.map((res, index) => (
-          <Link className="" to={"/restaurant/" + res.info.id} key={res.info.id}>
+          <Link
+            className=""
+            to={"/restaurant/" + res.info.id}
+            key={res.info.id}
+            
+          >
             {
               // If any of these objects are undefined, attempting to access properties deeper in the hierarchy will result in a TypeError. To prevent the error, you should ensure that all the nested properties are defined before trying to access discountTag.
 

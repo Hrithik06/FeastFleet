@@ -34,7 +34,7 @@ const ItemList = ({ items }) => {
     dispatch(addItem(item));
 
     setOpen(false);
-    setToastTitle(item.card.info.name + "Added");
+    setToastTitle("Added " + item.card.info.name);
     window.clearTimeout(timerRef.current);
     timerRef.current = window.setTimeout(() => {
       setOpen(true);

@@ -33,7 +33,7 @@ const CartItemList = ({ items }) => {
    dispatch(removeItem(item))
    //RadixUI
    setOpen(false);
-   setToastTitle(item.card.info.name + "Removed");
+   setToastTitle( "Removed " + item.card.info.name );
    window.clearTimeout(timerRef.current);
    timerRef.current = window.setTimeout(() => {
      setOpen(true);

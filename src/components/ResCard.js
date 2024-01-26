@@ -3,7 +3,7 @@ import { CDN_URL } from "../utils/constants";
 import UserContext from "./UserContext";
 const ResCard = ({ resData }) => {
 
-  console.log(resData);
+  // console.log(resData);
   
   
   const {loggedInUser} = useContext(UserContext)
@@ -20,10 +20,8 @@ const ResCard = ({ resData }) => {
   return (
     <div
       className="res-card w-64 
-      hover:shadow-xl
-      
-      
-      "
+      hover:shadow-xl"
+      data-testid="resCard"
     >
       {/* <div className="img"> */}
       <img
