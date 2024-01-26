@@ -1,0 +1,284 @@
+[
+    {
+    "info": {
+        "id": "496613",
+        "name": "Wow! Momo",
+        "cloudinaryImageId": "5a148e63e9c54942e37627da1aa156be",
+        "locality": "The Nexus Mall",
+        "areaName": "Koramangala",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "Tibetan",
+            "Healthy Food",
+            "Asian",
+            "Chinese",
+            "Snacks",
+            "Continental",
+            "Desserts",
+            "Beverages"
+        ],
+        "avgRating": 4.2,
+        "parentId": "1776",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "100+",
+        "sla": {
+            "deliveryTime": 25,
+            "lastMileTravel": 0.9,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "0.9 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-27 01:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹150 OFF",
+            "subHeader": "ABOVE ₹499",
+            "discountTag": "FLAT DEAL"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-2fd39bd4-6dff-4145-ac8a-ff67a587c2f4"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/wow-momo-the-nexus-mall-koramangala-bangalore-496613",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+},
+
+    {
+    "info": {
+        "id": "472792",
+        "name": "Great Indian Khichdi by EatFit",
+        "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
+        "locality": "LASKAR HOSUR ROAD",
+        "areaName": "ADUGODI",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "Home Food",
+            "Indian",
+            "Healthy Food",
+            "Snacks",
+            "Desserts",
+            "Rajasthani",
+            "South Indian",
+            "Maharashtrian",
+            "Sweets"
+        ],
+        "avgRating": 4.3,
+        "veg": true,
+        "parentId": "319582",
+        "avgRatingString": "4.3",
+        "totalRatingsString": "1K+",
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 1.2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "1.2 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-26 23:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ],
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "brand",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "brand"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹159"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-09c9ce70-8b30-41e9-9626-79d2dffaac66"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/great-indian-khichdi-by-eatfit-laskar-hosur-road-adugodi-bangalore-472792",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+},
+    {
+    "info": {
+        "id": "565281",
+        "name": "Wendy's",
+        "cloudinaryImageId": "f1aa621021a2826088089b89842d4e7c",
+        "locality": "KEB Layout",
+        "areaName": "BTM 1st Stage",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "Burgers",
+            "American",
+            "Fast Food",
+            "Snacks",
+            "Beverages"
+        ],
+        "avgRating": 4.1,
+        "parentId": "972",
+        "avgRatingString": "4.1",
+        "totalRatingsString": "1K+",
+        "sla": {
+            "deliveryTime": 27,
+            "lastMileTravel": 2.2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "2.2 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-26 23:59:00",
+            "opened": true
+        },
+        "badges": {
+            "textExtendedBadges": [
+                {
+                    "iconId": "guiltfree/GF_Logo_android_3x",
+                    "shortDescription": "options available",
+                    "fontColor": "#7E808C"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "",
+                                "fontColor": "#7E808C",
+                                "iconId": "guiltfree/GF_Logo_android_3x",
+                                "shortDescription": "options available"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹129"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-b6a45ebc-6b40-44bc-9d73-59e963135f45"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/wendys-keb-layout-btm-1st-stage-bangalore-565281",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
+]

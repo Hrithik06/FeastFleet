@@ -1,5 +1,5 @@
 import {useState,useContext } from "react";
-import LOGO_URL from "../../icons/FEAST_FLEET.svg";
+// import LOGO_URL from "../../icons/FEAST_FLEET.svg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
@@ -23,12 +23,11 @@ const cartItems = useSelector((store)=>store.cart.items) ;
       <div className="header top-0 sticky z-30 px-20 py-2 flex justify-between items-center shadow-lg text-lg font-poppins bg-white">
         <div className="logo-container">
           <a href="/"> 
-          {/* <img src={LOGO_URL} alt="logo" className="w-15"/> */}
           <img width="96" height="96" 
           
-          src={LOGO_URL}
+          // src={LOGO_URL}
           
-          // src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
+          src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
           
           
           alt="logo"/>

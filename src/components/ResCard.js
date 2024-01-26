@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 import UserContext from "./UserContext";
-
 const ResCard = ({ resData }) => {
 
+  console.log(resData);
+  
   
   const {loggedInUser} = useContext(UserContext)
   const {
@@ -30,8 +31,8 @@ const ResCard = ({ resData }) => {
         // style={"height: 100%; width: 100%;"}
       />
       {/* </div> */}
-      <div className="textDetails m-2">
-        <h3 className="font-bold truncate">{name}</h3>
+      <div className="textDetails my-2">
+        <h3 className="font-medium text-xl truncate">{name}</h3>
         <h4 className="truncate">{cuisines.join(", ")}</h4>
         <h5 className="font-medium">
           {avgRating} ⭐

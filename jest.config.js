@@ -14,6 +14,17 @@ const config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\hrith\\AppData\\Local\\Temp\\jest",
 
+
+
+  moduleNameMapper: {
+    "\\.(svg|png)$": "identity-obj-proxy"
+  },
+  transform: {
+    "^.+\\.(jsx?|tsx?)$": "babel-jest",
+  },
+
+
+
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
@@ -193,6 +204,7 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  
 };
 
 module.exports = config;
