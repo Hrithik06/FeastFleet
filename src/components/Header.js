@@ -1,5 +1,6 @@
 import {useState,useContext } from "react";
-// import LOGO_URL from "../../icons/FEAST_FLEET.svg";
+import LOGO_URL from "../../icons/FEAST_FLEET.svg";
+
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "./UserContext";
@@ -25,9 +26,10 @@ const cartItems = useSelector((store)=>store.cart.items) ;
           <a href="/"> 
           <img width="96" height="96" 
           
-          // src={LOGO_URL}
+          src={LOGO_URL}
           
-          src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
+          // During Testing
+          // src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
           
           
           alt="logo"/>

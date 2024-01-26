@@ -45,10 +45,12 @@ const ItemList = ({ items }) => {
   return (
     <div>
       {items.map((item) => (
-        <Toast.Provider swipeDirection="right" duration={1000}>
+        <Toast.Provider swipeDirection="right" duration={1000} 
+        key={item.card.info.id}
+        >
           <div
             className="border-b-2 border-gray-200 my-4 pb-5 flex"
-            key={item.card.info.id}
+            data-testid = "foodItem"
           >
             <div className="w-1/4 pl-6">
               <div className="absolute">

@@ -15,14 +15,10 @@ const config = {
   // cacheDirectory: "C:\\Users\\hrith\\AppData\\Local\\Temp\\jest",
 
 
-
-  moduleNameMapper: {
-    "\\.(svg|png)$": "identity-obj-proxy"
+  "moduleNameMapper": {
+    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jestMockForPNGSVG/fileMock.js",
+    "\\.(css|less)$": "<rootDir>/jestMockForPNGSVG/fileMock.js"
   },
-  transform: {
-    "^.+\\.(jsx?|tsx?)$": "babel-jest",
-  },
-
 
 
   // Automatically clear mock calls, instances, contexts and results before every test
