@@ -55,4 +55,4 @@
 - Install @babel/preset-react - to make JSX work in test cases
 - Include @babel/preset-react inside my babel config
 - npm i -D @testing-library/jest-dom
-- The only one Solution to handle when importing local svg, png files which is working now [StackeOverflow]("https://stackoverflow.com/a/54513338")
+- The only one Solution to handle when importing local svg, png files which is working now [StackeOverflow](https://stackoverflow.com/a/54513338)
