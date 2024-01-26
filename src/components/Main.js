@@ -15,7 +15,7 @@ const Main = () => {
     fetchData();
   }, []);
 
-  console.log(listOfRes);
+  // console.log(listOfRes);
 
   const fetchData = async () => {
     const data = await fetch(HOME_API);

@@ -7,17 +7,21 @@ describe("Contact page tests", ()=>{
     render(<Contact />);
     const heading = screen.getAllByRole("heading");
     expect(heading.length).not.toBeNull();
-    console.log(heading.length);
+    // console.log(heading.length);
   });
   
   it("Should load 2 Input textboxes", () => {
+    render(<Contact />);
+
     const inputBoxes = screen.getAllByRole("textbox");
     expect(inputBoxes.length).toBe(2);
-    console.log(inputBoxes.length);
+    // console.log(inputBoxes.length);
   });
   
   test("Should load button with Text Submit", () => {
-    const button = screen.getByText("Submit");
+    render(<Contact />);
+
+    const button = screen.getByRole("button",{name:"Submit"});
   
     expect(button).toBeInTheDocument();
   });
