@@ -19,19 +19,21 @@ const ResCard = ({ resData }) => {
 
   return (
     <div
-      className="res-card w-64 transition ease-in-out duration-200 delay-75
-   hover:shadow-lg rounded-lg
-   "
+      className="res-card w-64 
+      hover:shadow-xl
+      
+      
+      "
     >
       {/* <div className="img"> */}
       <img
-        className="res-logo rounded-lg h-44 w-full "
+        className="res-logo rounded-lg h-44 w-full"
         src={CDN_URL + cloudinaryImageId}
         alt="res-img"
         // style={"height: 100%; width: 100%;"}
       />
       {/* </div> */}
-      <div className="textDetails my-2">
+      <div className="textDetails m-2">
         <h3 className="font-medium text-xl truncate">{name}</h3>
         <h4 className="truncate">{cuisines.join(", ")}</h4>
         <h5 className="font-medium">
@@ -58,7 +60,7 @@ export const withOfferResCard = (ResCard) => {
     // console.log(props.resData.info.aggregatedDiscountInfoV3);
 
     return (
-      <div className="relative">
+      <div className="relative ">
         <ResCard {...props} />
 
         <div

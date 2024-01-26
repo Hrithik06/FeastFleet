@@ -94,7 +94,7 @@ const Main = () => {
         </div> */}
 
         <button
-          className="filter-btn w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center  hover:font-medium shadow-lg hover:bg-green-100"
+          className="filter-btn w-60 py-2 border-solid border-2 border-black-700 rounded-full text-center shadow-lg hover:bg-green-200 transition ease-in duration-500"
           onClick={() => {
             //updating the UI
             const filterList = listOfRes.filter(
@@ -107,9 +107,9 @@ const Main = () => {
         </button>
       </div>
 
-      <div className="res-container gap-10 mx-16 m-5 flex flex-wrap justify-start ">
+      <div className="res-container gap-10 mx-16 m-5 flex flex-wrap justify-start">
         {listOfRes.map((res, index) => (
-          <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
+          <Link className="" to={"/restaurant/" + res.info.id} key={res.info.id}>
             {
               // If any of these objects are undefined, attempting to access properties deeper in the hierarchy will result in a TypeError. To prevent the error, you should ensure that all the nested properties are defined before trying to access discountTag.
 
