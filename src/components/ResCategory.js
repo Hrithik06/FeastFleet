@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ARROW_DOWN from "../../icons/icons8-arrow-down-30.png";
+// import ARROW_DOWN from "../../icons/icons8-arrow-down-30.png";
 import ItemList from "./ItemList";
 
 const ResCategory = ({ data, showItems, indexCbFun, index }) => {
@@ -28,7 +28,15 @@ const [click, setClick] = useState(false)
           {title} ({itemCards.length})
         </span>
         <span className="mr-6">
-          <img src={ARROW_DOWN} alt="" />
+          <img 
+          // src={ARROW_DOWN} 
+          //During Testing
+          src="https://img.icons8.com/ios/30/expand-arrow--v1.png"
+          alt="arrow-down" />
+
+          
+          
+
         </span>
       </div>
 

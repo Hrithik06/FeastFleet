@@ -35,9 +35,24 @@
 - JSDOM(check React Testing Lib Setup)
 
 
-#### Read more abt
+## Read more abt
 - parcel features
 - jsdom
 - immerjs used in redux and RTK
 - dunder why its used, reserved characters
 - why axios why cant we use fetch only, axios provides some more features for prod.
+
+
+
+## Jest Configuration
+- Install React Testing Library
+- Installed jest
+- Installed Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest - npx jest --init
+- Install jsdom library
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- npm i -D @testing-library/jest-dom
+- The only one Solution to handle when importing local svg, png files which is working now[StackeOverflow]("https://stackoverflow.com/a/54513338")

@@ -28,7 +28,7 @@ const cartItems = useSelector((store)=>store.cart.items) ;
           
           src={LOGO_URL}
           
-          //During Testing
+          // During Testing
           // src="https://img.icons8.com/fluency/96/pizza-delivery.png" 
           
           

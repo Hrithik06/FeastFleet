@@ -43,20 +43,22 @@ const CartItemList = ({ items }) => {
     <div>
       {items.map((item) => (
         
-        <Toast.Provider swipeDirection="right" duration={1000}>
+        <Toast.Provider swipeDirection="right" duration={1000} 
+          key={item.card.info.id}
+        >
 
         <div
           className="border-b-2 border-gray-200 my-4 pb-5 flex"
           key={item.card.info.id}
+          data-testid="cartItem"
         >
           <div className=" px-6">
             <div className="absolute">
               <button
                 className=" bg-white text-red-500 px-3 py-1 border-gray-300 border-2 rounded-md mx-3 mt-20 hover:bg-green-200"
                 onClick={()=>handleRemoveItem(item)}
-              >
-                Remove
-              </button>
+                data-testid="removeButton"
+              >Remove</button>
             </div>
             {item.card.info.imageId ? (
               <img
