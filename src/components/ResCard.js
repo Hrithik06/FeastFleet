@@ -19,8 +19,8 @@ const ResCard = ({ resData }) => {
 
   return (
     <div
-      className="res-card w-64 
-      hover:shadow-xl"
+      className="res-card w-64 pb-2
+      hover:shadow-xl rounded-xl"
       data-testid="resCard"
     >
       {/* <div className="img"> */}
