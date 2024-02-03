@@ -2957,7 +2957,6 @@ var _headerDefault = parcelHelpers.interopDefault(_header);
 var _main = require("./components/Main");
 var _mainDefault = parcelHelpers.interopDefault(_main);
 var _reactRouterDom = require("react-router-dom");
-// import About from "./components/About";
 var _contact = require("./components/Contact");
 var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _error = require("./components/Error");
@@ -3006,34 +3005,34 @@ const AppLayout = ()=>{
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 42,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 46,
+                            lineNumber: 45,
                             columnNumber: 15
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 45,
+                        lineNumber: 44,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/App.js",
-                lineNumber: 39,
+                lineNumber: 38,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 37,
+            lineNumber: 36,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 36,
+        lineNumber: 35,
         columnNumber: 5
     }, undefined);
 };
@@ -3044,7 +3043,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3052,7 +3051,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 61,
+                    lineNumber: 60,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3061,17 +3060,17 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 66,
+                        lineNumber: 65,
                         columnNumber: 31
                     }, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 67,
+                        lineNumber: 66,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 66,
+                    lineNumber: 65,
                     columnNumber: 11
                 }, undefined)
             },
@@ -3079,7 +3078,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 73,
+                    lineNumber: 72,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3088,17 +3087,17 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 78,
+                        lineNumber: 77,
                         columnNumber: 31
                     }, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Grocery, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 79,
+                        lineNumber: 78,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 78,
+                    lineNumber: 77,
                     columnNumber: 11
                 }, undefined)
             },
@@ -3107,7 +3106,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 86,
+                    lineNumber: 85,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3115,7 +3114,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/accordion",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _accordionDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 90,
+                    lineNumber: 89,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3123,7 +3122,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 94,
+                    lineNumber: 93,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3131,14 +3130,14 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/test",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _testingDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 98,
+                    lineNumber: 97,
                     columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 102,
+            lineNumber: 101,
             columnNumber: 19
         }, undefined)
     }
@@ -3149,7 +3148,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 107,
+    lineNumber: 106,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2;
@@ -27597,7 +27596,7 @@ exports.getOrigin = getOrigin;
 
 },{}],"9xmpe":[function(require,module,exports) {
 /**
- * React Router DOM v6.21.3
+ * React Router DOM v6.22.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -27896,6 +27895,21 @@ const _excluded = [
     "preventScrollReset",
     "unstable_viewTransition"
 ];
+// HEY YOU! DON'T TOUCH THIS VARIABLE!
+//
+// It is replaced with the proper version at build time via a babel plugin in
+// the rollup config.
+//
+// Export a global property onto the window for React Router detection by the
+// Core Web Vitals Technology Report.  This way they can configure the `wappalyzer`
+// to detect and properly classify live websites as being built with React Router:
+// https://github.com/HTTPArchive/wappalyzer/blob/main/src/technologies/r.json
+const REACT_ROUTER_VERSION = "6";
+try {
+    window.__reactRouterVersion = REACT_ROUTER_VERSION;
+} catch (e) {
+// no-op
+}
 function createBrowserRouter(routes, opts) {
     return (0, _router.createRouter)({
         basename: opts == null ? void 0 : opts.basename,
@@ -29006,7 +29020,7 @@ let savedScrollPositions = {};
 
 },{"react":"21dqq","react-dom":"j6uA9","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dbWyW":[function(require,module,exports) {
 /**
- * React Router v6.21.3
+ * React Router v6.22.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -30253,7 +30267,7 @@ function createMemoryRouter(routes, opts) {
 
 },{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ncDG":[function(require,module,exports) {
 /**
- * @remix-run/router v1.14.2
+ * @remix-run/router v1.15.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32801,7 +32815,8 @@ function createStaticHandler(routes, opts) {
     } else mapRouteProperties = defaultMapRouteProperties;
     // Config driven behavior flags
     let future = _extends({
-        v7_relativeSplatPath: false
+        v7_relativeSplatPath: false,
+        v7_throwAbortReason: false
     }, opts ? opts.future : null);
     let dataRoutes = convertRoutesToDataRoutes(routes, mapRouteProperties, undefined, manifest);
     /**
@@ -32982,10 +32997,7 @@ function createStaticHandler(routes, opts) {
                 isRouteRequest,
                 requestContext
             });
-            if (request.signal.aborted) {
-                let method = isRouteRequest ? "queryRoute" : "query";
-                throw new Error(method + "() call aborted: " + request.method + " " + request.url);
-            }
+            if (request.signal.aborted) throwStaticHandlerAbortedError(request, isRouteRequest, future);
         }
         if (isRedirectResult(result)) // Uhhhh - this should never happen, we should always throw these from
         // callLoaderOrAction, but the type narrowing here keeps TS happy and we
@@ -33093,10 +33105,7 @@ function createStaticHandler(routes, opts) {
                     requestContext
                 }))
         ]);
-        if (request.signal.aborted) {
-            let method = isRouteRequest ? "queryRoute" : "query";
-            throw new Error(method + "() call aborted: " + request.method + " " + request.url);
-        }
+        if (request.signal.aborted) throwStaticHandlerAbortedError(request, isRouteRequest, future);
         // Process and commit output from loaders
         let activeDeferreds = new Map();
         let context = processRouteLoaderData(matches, matchesToLoad, results, pendingActionError, activeDeferreds);
@@ -33125,12 +33134,17 @@ function createStaticHandler(routes, opts) {
  * provide an updated StaticHandlerContext suitable for a second SSR render
  */ function getStaticContextFromError(routes, context, error) {
     let newContext = _extends({}, context, {
-        statusCode: 500,
+        statusCode: isRouteErrorResponse(error) ? error.status : 500,
         errors: {
             [context._deepestRenderedBoundaryId || routes[0].id]: error
         }
     });
     return newContext;
+}
+function throwStaticHandlerAbortedError(request, isRouteRequest, future) {
+    if (future.v7_throwAbortReason && request.signal.reason !== undefined) throw request.signal.reason;
+    let method = isRouteRequest ? "queryRoute" : "query";
+    throw new Error(method + "() call aborted: " + request.method + " " + request.url);
 }
 function isSubmissionNavigation(opts) {
     return opts != null && ("formData" in opts && opts.formData != null || "body" in opts && opts.body !== undefined);
