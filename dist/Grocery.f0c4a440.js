@@ -1,0 +1,2 @@
+var e=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequireab88;(0,e.register)("5iYCl",function(n,r){Object.defineProperty(n.exports,"__esModule",{value:!0,configurable:!0}),Object.defineProperty(n.exports,"default",{get:function(){return o},set:void 0,enumerable:!0,configurable:!0});var l=e("5Wgfu"),o=()=>(0,l.jsx)("div",{children:(0,l.jsx)("div",{className:"bg-grocery bg-center h-screen bg-cover w-full "})})});
+//# sourceMappingURL=Grocery.f0c4a440.js.map
