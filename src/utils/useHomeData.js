@@ -8,6 +8,8 @@ const useHomeData = () => {
   }, []);
 
   const fetchData = async () => {
+    console.log("hi")
+    
     const data = await fetch(HOME_API);
     const json = await data.json();
 

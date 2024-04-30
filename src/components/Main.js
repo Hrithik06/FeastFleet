@@ -2,8 +2,9 @@ import ResCard, { withOfferResCard } from "./ResCard";
 import Shimmer from "./Shimmer";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HOME_API } from "../utils/constants";
+import { HOME_API, UPDATE_LIST } from "../utils/constants";
 import UserContext from "./UserContext";
+import ScrollDetector from "./ScrollDetector";
 
 const Main = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -15,20 +16,78 @@ const Main = () => {
     fetchData();
   }, []);
 
+
+
+  // const handleShowMore = async () => {
+
+
+
+
+  //   const payload ={
+  //     "lat": 12.9328638,
+  //     "lng": 77.6139346,
+  //     "nextOffset": "COVCELQ4KIDo+J+28sP6NzCnEzgE",
+  //     "widgetOffset": {
+  //         "NewListingView_category_bar_chicletranking_TwoRows": "",
+  //         "NewListingView_category_bar_chicletranking_TwoRows_Rendition": "",
+  //         "Restaurant_Group_WebView_PB_Theme": "",
+  //         "Restaurant_Group_WebView_SEO_PB_Theme": "",
+  //         "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo": "10",
+  //         "inlineFacetFilter": "",
+  //         "restaurantCountWidget": ""
+  //     },
+  //     "filters": {},
+  //     "seoParams": {
+  //         "seoUrl": "https://www.swiggy.com/",
+  //         "pageType": "FOOD_HOMEPAGE",
+  //         "apiName": "FoodHomePage"
+  //     },
+  //     "page_type": "DESKTOP_WEB_LISTING",
+  //     "_csrf": "dWtQ4mDE4eqE-I7bUVuw-IIkO7t-sbzJH_2KI45U"
+  // }
+  // fetch(UPDATE_LIST, {
+  //     method: 'POST',
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(payload),
+  // })
+  // .then(response => {
+  //     if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //     }
+  //     return response.json();
+  // })
+  // .then(data => {
+  //     console.log(data); // Handle response data here
+  // })
+  // .catch(error => {
+  //     console.error('There was a problem with the fetch operation:', error);
+  // });
+  
+  // }
+
   const fetchData = async () => {
+console.log(HOME_API)
+
 
       const data = await fetch(HOME_API);
       // console.log(data);
       // Check if the response status is OK
 
       const json = await data.json();
-      // console.log(json)
+       console.log(json)
 
       // Optional Chaining
       const apiData =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
+          console.log(apiData)
+          
       setListOfRes(apiData);
+
+      // console.log(listOfRes)
+      
     
   };
 
@@ -133,6 +192,8 @@ const Main = () => {
           </Link>
         ))}
       </div>
+  {/* <button onClick={handleShowMore}>show more</button> */}
+
     </div>
   );
 };
