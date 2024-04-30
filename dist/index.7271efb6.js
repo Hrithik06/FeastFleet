@@ -35455,15 +35455,15 @@ const Main = ()=>{
     // });
     // }
     const fetchData = async ()=>{
-        console.log((0, _constants.HOME_API));
+        // console.log(HOME_API)
         const data = await fetch((0, _constants.HOME_API));
         // console.log(data);
         // Check if the response status is OK
         const json = await data.json();
-        console.log(json);
+        //  console.log(json)
         // Optional Chaining
         const apiData = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        console.log(apiData);
+        // console.log(apiData)
         setListOfRes(apiData);
     // console.log(listOfRes)
     };
