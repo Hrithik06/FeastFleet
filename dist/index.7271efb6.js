@@ -35765,8 +35765,8 @@ parcelHelpers.export(exports, "UPDATE_LIST", ()=>UPDATE_LIST);
 parcelHelpers.export(exports, "MENU_API", ()=>MENU_API);
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const HOME_API = "https://thingproxy.freeboard.io/fetch/" + encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9328638&lng=77.6139346&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-const UPDATE_LIST = "https://corsproxy.org/?" + encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/update");
-const MENU_API = "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D12.9073473%26lng%3D77.6011195%26restaurantId%3D" //  const LOGO_URL = "../../icons/logo.png";
+const UPDATE_LIST = "https://thingproxy.freeboard.io/fetch/" + encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/update");
+const MENU_API = "https://thingproxy.freeboard.io/fetch/" + encodeURIComponent("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9328638&lng=77.6139346&restaurantId=") //  const LOGO_URL = "../../icons/logo.png";
  // export {CDN_URL}
 ;
 
@@ -36154,12 +36154,14 @@ const ResMenu = ()=>{
         lineNumber: 23,
         columnNumber: 12
     }, undefined);
+    console.log(resInfo);
     //As per the API 0th element of array contains the restaurant name
-    const { name, avgRating, cuisines, areaName, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
+    const { name, avgRating, cuisines, areaName, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;
+    console.log(name, avgRating, cuisines, areaName, costForTwoMessage);
     //As per the API 2nd element of array contains the category and dishes
     // Getting Categories like Recommended from the array. This string signifes category "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    // console.log(categories)
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    console.log(categories[0]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "mx-24",
         children: [
@@ -36173,20 +36175,20 @@ const ResMenu = ()=>{
                                 children: name
                             }, void 0, false, {
                                 fileName: "src/components/ResMenu.js",
-                                lineNumber: 47,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: areaName
                             }, void 0, false, {
                                 fileName: "src/components/ResMenu.js",
-                                lineNumber: 48,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ResMenu.js",
-                        lineNumber: 46,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36195,7 +36197,7 @@ const ResMenu = ()=>{
                                 children: cuisines.join(", ")
                             }, void 0, false, {
                                 fileName: "src/components/ResMenu.js",
-                                lineNumber: 51,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -36205,26 +36207,26 @@ const ResMenu = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/ResMenu.js",
-                                lineNumber: 52,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: costForTwoMessage
                             }, void 0, false, {
                                 fileName: "src/components/ResMenu.js",
-                                lineNumber: 53,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ResMenu.js",
-                        lineNumber: 50,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ResMenu.js",
-                lineNumber: 45,
+                lineNumber: 47,
                 columnNumber: 7
             }, undefined),
             categories.map((c, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCategoryDefault.default), {
@@ -36234,13 +36236,13 @@ const ResMenu = ()=>{
                     index: index
                 }, c.card.card.title, false, {
                     fileName: "src/components/ResMenu.js",
-                    lineNumber: 60,
+                    lineNumber: 62,
                     columnNumber: 7
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/ResMenu.js",
-        lineNumber: 44,
+        lineNumber: 46,
         columnNumber: 5
     }, undefined);
 };
@@ -36458,8 +36460,9 @@ var _s = $RefreshSig$();
 const ResCategory = ({ data, showItems, indexCbFun, index })=>{
     _s();
     const { title, itemCards } = data?.card?.card;
+    console.log(data);
     //This state var is tracking click of category
-    // false- by default all are collapsed 
+    // false- by default all are collapsed
     const [click, setClick] = (0, _react.useState)(false);
     const handleClick = ()=>{
         // toggling clicks
@@ -36484,43 +36487,43 @@ const ResCategory = ({ data, showItems, indexCbFun, index })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ResCategory.js",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         className: "mr-6",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            // src={ARROW_DOWN} 
+                            // src={ARROW_DOWN}
                             //During Testing
                             src: "https://img.icons8.com/ios/30/expand-arrow--v1.png",
                             alt: "arrow-down"
                         }, void 0, false, {
                             fileName: "src/components/ResCategory.js",
-                            lineNumber: 31,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ResCategory.js",
-                        lineNumber: 30,
+                        lineNumber: 29,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ResCategory.js",
-                lineNumber: 23,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined),
             click && showItems && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
                 items: itemCards
             }, void 0, false, {
                 fileName: "src/components/ResCategory.js",
-                lineNumber: 49,
+                lineNumber: 45,
                 columnNumber: 30
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ResCategory.js",
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 5
     }, undefined);
 };

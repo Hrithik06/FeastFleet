@@ -4,14 +4,13 @@ import ItemList from "./ItemList";
 
 const ResCategory = ({ data, showItems, indexCbFun, index }) => {
   const { title, itemCards } = data?.card?.card;
-
+console.log(data)
 
   //This state var is tracking click of category
-  // false- by default all are collapsed 
-const [click, setClick] = useState(false)
+  // false- by default all are collapsed
+  const [click, setClick] = useState(false);
 
   const handleClick = () => {
-
     // toggling clicks
     //1st click set to true shows items, second click set to false hides items
     setClick(!click);
@@ -28,19 +27,16 @@ const [click, setClick] = useState(false)
           {title} ({itemCards.length})
         </span>
         <span className="mr-6">
-          <img 
-          // src={ARROW_DOWN} 
-          //During Testing
-          src="https://img.icons8.com/ios/30/expand-arrow--v1.png"
-          alt="arrow-down" />
-
-          
-          
-
+          <img
+            // src={ARROW_DOWN}
+            //During Testing
+            src="https://img.icons8.com/ios/30/expand-arrow--v1.png"
+            alt="arrow-down"
+          />
         </span>
       </div>
 
-{ /*
+      {/*
  result of AND operator of
  true && false == false
  click = true showItems = true Display items
