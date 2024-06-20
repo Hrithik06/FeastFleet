@@ -22,21 +22,23 @@ const ResMenu = () => {
   if (resInfo === null) {
     return <ShimmerMenu />;
   }
+console.log(resInfo)
 
   //As per the API 0th element of array contains the restaurant name
   const { name, avgRating, cuisines, areaName, costForTwoMessage } =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
+console.log(name, avgRating, cuisines, areaName, costForTwoMessage )
 
   //As per the API 2nd element of array contains the category and dishes
   
   // Getting Categories like Recommended from the array. This string signifes category "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
   (c)=>
     c?.card?.card?.["@type"]===
     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   
 )
-// console.log(categories)
+console.log(categories[0])
 
 
 
@@ -64,6 +66,7 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
       key={c.card.card.title}/>
       )}
     </div>
+
 
   );
 };
